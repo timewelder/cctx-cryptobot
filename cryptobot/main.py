@@ -171,7 +171,7 @@ class TradingBot:
             self.log.warning("No stop order found for open trade #%d - re-placing.", state["trade_id"])
             await self.execution.place_stop_loss(position_side, state["size_base"], stop_price)
 
-    async def main_loop(self) -> None:
+     async def main_loop(self) -> None:
         await self.startup()
 
         loop = asyncio.get_event_loop()
@@ -181,7 +181,7 @@ class TradingBot:
             except (NotImplementedError, RuntimeError, ValueError):
                 pass
 
-            try:
+        try:
             while not self._stop_requested:
                 sleep_s = seconds_until_next_candle_close(settings.timeframe)
                 self.log.info("Sleeping %.1fs until next %s candle close.", sleep_s, settings.timeframe)
@@ -191,9 +191,10 @@ class TradingBot:
                 try:
                     await self.run_once()
                 except Exception:
-                    self.log.exception("Unhandled error in run_once - continuing to next candle.")
+                    self.log.exception("Unhandled error in run_once, continuing to next candle.")
         finally:
             await self.shutdown()
+
 
     def _request_stop(self) -> None:
         self.log.info("Stop requested - will exit after the current cycle.")
