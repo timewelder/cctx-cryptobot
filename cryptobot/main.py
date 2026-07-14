@@ -174,16 +174,14 @@ class TradingBot:
     async def main_loop(self) -> None:
         await self.startup()
 
-                        loop = asyncio.get_event_loop()
+        loop = asyncio.get_event_loop()
         for sig in (signal.SIGINT, signal.SIGTERM):
             try:
                 loop.add_signal_handler(sig, self._request_stop)
             except (NotImplementedError, RuntimeError, ValueError):
                 pass
 
-
-
-        try:
+  try:
             while not self._stop_requested:
                 sleep_s = seconds_until_next_candle_close(settings.timeframe)
                 self.log.info("Sleeping %.1fs until next %s candle close.", sleep_s, settings.timeframe)
