@@ -1,0 +1,50 @@
+2026-07-14 00:57:29 | ERROR    | trading_bot | Exchange error (not retrying - likely permanent): bybit {"retCode":10003,"retMsg":"API key is invalid.","result":{},"retExtInfo":{},"time":1783987049013}
+2026-07-14 01:00:41 | INFO     | trading_bot | Leverage set to 2x for BTC/USDT:USDT
+2026-07-14 01:00:41 | INFO     | trading_bot | TradingBot started: BTC/USDT:USDT 15m on bybit, 2x leverage, risk 1.00%/trade, testnet=False
+2026-07-14 01:00:41 | INFO     | trading_bot | Sleeping 863.9s until next 15m candle close.
+2026-07-14 01:15:12 | INFO     | trading_bot | No entry signal this candle (close=62408.1000, rsi=60.03, atr=178.5932).
+2026-07-14 01:15:12 | INFO     | trading_bot | Performance | Realized PnL: $0.00 | Win/Loss: 0/0 (ratio nan) | Max DD: 0.00%
+2026-07-14 01:15:12 | INFO     | trading_bot | Sleeping 892.4s until next 15m candle close.
+2026-07-14 01:30:10 | INFO     | trading_bot | No entry signal this candle (close=62345.0000, rsi=56.96, atr=175.1080).
+2026-07-14 01:30:10 | INFO     | trading_bot | Performance | Realized PnL: $0.00 | Win/Loss: 0/0 (ratio nan) | Max DD: 0.00%
+2026-07-14 01:30:10 | INFO     | trading_bot | Sleeping 894.4s until next 15m candle close.
+2026-07-14 01:45:06 | INFO     | trading_bot | No entry signal this candle (close=62285.2000, rsi=54.13, atr=174.5574).
+2026-07-14 01:45:06 | INFO     | trading_bot | Performance | Realized PnL: $0.00 | Win/Loss: 0/0 (ratio nan) | Max DD: 0.00%
+2026-07-14 01:45:06 | INFO     | trading_bot | Sleeping 898.6s until next 15m candle close.
+2026-07-14 10:41:18 | ERROR    | trading_bot | Exchange error (not retrying - likely permanent): bybit {"retCode":110043,"retMsg":"leverage not modified","result":{},"retExtInfo":{},"time":1784022078866}
+2026-07-14 10:41:18 | WARNING  | trading_bot | set_leverage failed (bybit {"retCode":110043,"retMsg":"leverage not modified","result":{},"retExtInfo":{},"time":1784022078866}) - verify manually that BTC/USDT:USDT is configured for 2x leverage on bybit before trading live.
+2026-07-14 10:41:18 | INFO     | trading_bot | TradingBot started: BTC/USDT:USDT 15m on bybit, 2x leverage, risk 1.00%/trade, testnet=False
+2026-07-14 10:41:18 | INFO     | trading_bot | Sleeping 226.0s until next 15m candle close.
+2026-07-14 10:45:06 | INFO     | trading_bot | No entry signal this candle (close=62534.4000, rsi=46.66, atr=122.8464).
+2026-07-14 10:45:06 | INFO     | trading_bot | Performance | Realized PnL: $0.00 | Win/Loss: 0/0 (ratio nan) | Max DD: 0.00%
+2026-07-14 10:45:06 | INFO     | trading_bot | Sleeping 898.4s until next 15m candle close.
+2026-07-14 11:00:06 | INFO     | trading_bot | No entry signal this candle (close=62603.2000, rsi=51.00, atr=122.5931).
+2026-07-14 11:00:06 | INFO     | trading_bot | Performance | Realized PnL: $0.00 | Win/Loss: 0/0 (ratio nan) | Max DD: 0.00%
+2026-07-14 11:00:06 | INFO     | trading_bot | Sleeping 898.1s until next 15m candle close.
+2026-07-14 11:15:11 | INFO     | trading_bot | No entry signal this candle (close=62694.0000, rsi=56.07, atr=121.4722).
+2026-07-14 11:15:11 | INFO     | trading_bot | Performance | Realized PnL: $0.00 | Win/Loss: 0/0 (ratio nan) | Max DD: 0.00%
+2026-07-14 11:15:11 | INFO     | trading_bot | Sleeping 893.2s until next 15m candle close.
+2026-07-14 11:30:06 | INFO     | trading_bot | No entry signal this candle (close=62638.8000, rsi=52.51, atr=118.1385).
+2026-07-14 11:30:06 | INFO     | trading_bot | Performance | Realized PnL: $0.00 | Win/Loss: 0/0 (ratio nan) | Max DD: 0.00%
+2026-07-14 11:30:06 | INFO     | trading_bot | Sleeping 898.7s until next 15m candle close.
+2026-07-14 11:45:06 | INFO     | trading_bot | No entry signal this candle (close=62778.1000, rsi=59.50, atr=124.7143).
+2026-07-14 11:45:06 | INFO     | trading_bot | Performance | Realized PnL: $0.00 | Win/Loss: 0/0 (ratio nan) | Max DD: 0.00%
+2026-07-14 11:45:06 | INFO     | trading_bot | Sleeping 898.5s until next 15m candle close.
+2026-07-14 12:00:08 | INFO     | trading_bot | No entry signal this candle (close=62771.7000, rsi=59.07, atr=124.4990).
+2026-07-14 12:00:08 | INFO     | trading_bot | Performance | Realized PnL: $0.00 | Win/Loss: 0/0 (ratio nan) | Max DD: 0.00%
+2026-07-14 12:00:08 | INFO     | trading_bot | Sleeping 896.1s until next 15m candle close.
+2026-07-14 12:15:07 | INFO     | trading_bot | No entry signal this candle (close=62771.0000, rsi=59.02, atr=122.4848).
+2026-07-14 12:15:07 | INFO     | trading_bot | Performance | Realized PnL: $0.00 | Win/Loss: 0/0 (ratio nan) | Max DD: 0.00%
+2026-07-14 12:15:07 | INFO     | trading_bot | Sleeping 897.6s until next 15m candle close.
+2026-07-14 12:30:06 | INFO     | trading_bot | No entry signal this candle (close=62833.8000, rsi=62.13, atr=122.8716).
+2026-07-14 12:30:06 | INFO     | trading_bot | Performance | Realized PnL: $0.00 | Win/Loss: 0/0 (ratio nan) | Max DD: 0.00%
+2026-07-14 12:30:06 | INFO     | trading_bot | Sleeping 898.7s until next 15m candle close.
+2026-07-14 12:45:06 | INFO     | trading_bot | No entry signal this candle (close=62836.1000, rsi=62.25, atr=122.9522).
+2026-07-14 12:45:06 | INFO     | trading_bot | Performance | Realized PnL: $0.00 | Win/Loss: 0/0 (ratio nan) | Max DD: 0.00%
+2026-07-14 12:45:06 | INFO     | trading_bot | Sleeping 898.6s until next 15m candle close.
+2026-07-14 13:00:11 | INFO     | trading_bot | No entry signal this candle (close=62812.3000, rsi=60.24, atr=117.7699).
+2026-07-14 13:00:11 | INFO     | trading_bot | Performance | Realized PnL: $0.00 | Win/Loss: 0/0 (ratio nan) | Max DD: 0.00%
+2026-07-14 13:00:11 | INFO     | trading_bot | Sleeping 893.0s until next 15m candle close.
+2026-07-14 13:15:06 | INFO     | trading_bot | No entry signal this candle (close=62823.4000, rsi=60.88, atr=115.7292).
+2026-07-14 13:15:06 | INFO     | trading_bot | Performance | Realized PnL: $0.00 | Win/Loss: 0/0 (ratio nan) | Max DD: 0.00%
+2026-07-14 13:15:06 | INFO     | trading_bot | Sleeping 898.4s until next 15m candle close.
