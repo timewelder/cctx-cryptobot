@@ -174,12 +174,14 @@ class TradingBot:
     async def main_loop(self) -> None:
         await self.startup()
 
-        loop = asyncio.get_event_loop()
+                        loop = asyncio.get_event_loop()
         for sig in (signal.SIGINT, signal.SIGTERM):
             try:
                 loop.add_signal_handler(sig, self._request_stop)
-            except NotImplementedError:
+            except (NotImplementedError, RuntimeError, ValueError):
                 pass
+
+
 
         try:
             while not self._stop_requested:
