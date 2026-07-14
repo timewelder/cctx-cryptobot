@@ -38,7 +38,7 @@ def _get_int(name: str, default: int) -> int:
 @dataclass(frozen=True)
 class Settings:
     # --- Exchange / connectivity ---
-    exchange_id: str = field(default_factory=lambda: os.getenv("EXCHANGE_ID", "binanceusdm"))
+    exchange_id: str = field(default_factory=lambda: os.getenv("EXCHANGE_ID","bybit"))
     api_key: str = field(default_factory=lambda: os.getenv("API_KEY", ""))
     api_secret: str = field(default_factory=lambda: os.getenv("API_SECRET", ""))
     testnet: bool = field(default_factory=lambda: _get_bool("TESTNET", True))
