@@ -1,6 +1,4 @@
 """
-main.py
--------
 Module 5: Main Loop & Orchestration.
 
 Wires DataManager, StrategyEngine, RiskManager, and ExecutionEngine
@@ -83,9 +81,6 @@ class TradingBot:
         latest = signals.iloc[-1]
 
         balance_info = await with_retries(self.data.exchange.fetch_balance, logger=self.log)
-        # Assumes a USDT-margined account (true for binanceusdm defaults
-        # and Bybit linear USDT perps) - adjust the currency key if you
-        # trade a coin-margined / inverse contract instead.
         total_balance = float(balance_info.get("USDT", {}).get("total") or 0.0)
         free_margin = float(balance_info.get("USDT", {}).get("free") or 0.0)
         self.data.record_equity(total_balance)
@@ -154,9 +149,6 @@ class TradingBot:
         current_price = float(latest["close"])
 
         open_orders = await with_retries(self.data.exchange.fetch_open_orders, settings.symbol, logger=self.log)
-        # Best-effort match for our stop order; reduceOnly visibility on
-        # the unified order dict can vary by exchange - confirm against
-        # your exchange's actual response shape on testnet.
         stop_order = next((o for o in open_orders if o.get("reduceOnly")), None)
         stop_status = stop_order["status"] if stop_order else None
 
@@ -166,7 +158,7 @@ class TradingBot:
             pnl = (
                 (exit_price - state["entry_price"]) * state["size_base"] if position_side == "long"
                 else (state["entry_price"] - exit_price) * state["size_base"]
-            )  # excludes fees/funding - add your exchange's fee schedule for exact accounting
+            )
             self.data.close_trade(state["trade_id"], exit_price, pnl)
             self.data.save_state("open_trade", None)
             self.log.critical(
@@ -187,7 +179,7 @@ class TradingBot:
             try:
                 loop.add_signal_handler(sig, self._request_stop)
             except NotImplementedError:
-                pass  # signal handlers aren't available on every platform
+                pass
 
         try:
             while not self._stop_requested:
@@ -208,6 +200,20 @@ class TradingBot:
         self._stop_requested = True
 
 
-if __name__ == "__main__":
+# ==========================================
+# STANDALONE ENTRY POINTS FOR APP.PY WRAPPER
+# ==========================================
+
+def main():
+    """Synchronous entry point if app.py launches the bot inside a background thread."""
     bot = TradingBot()
     asyncio.run(bot.main_loop())
+
+async def main_loop():
+    """Asynchronous entry point if app.py schedules it directly in an existing event loop."""
+    bot = TradingBot()
+    await bot.main_loop()
+
+
+if __name__ == "__main__":
+    main()
