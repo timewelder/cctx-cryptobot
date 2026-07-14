@@ -181,7 +181,7 @@ class TradingBot:
             except (NotImplementedError, RuntimeError, ValueError):
                 pass
 
-  try:
+            try:
             while not self._stop_requested:
                 sleep_s = seconds_until_next_candle_close(settings.timeframe)
                 self.log.info("Sleeping %.1fs until next %s candle close.", sleep_s, settings.timeframe)
