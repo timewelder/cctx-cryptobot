@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 15m Multi-Indicator Futures Trading Bot
 
 A modular Python bot for 15-minute Supertrend + RSI + ATR futures trading
@@ -113,3 +114,6 @@ journalctl -u crypto-bot -f
 - A monitoring/alerting hook (Telegram, Discord, email) specifically for
   the emergency-stop path, since that's the scenario you most want to
   know about immediately.
+=======
+# cctx-cryptobot
+>>>>>>> 0abfc6848cc0c0158bf445c8fe6cdae73cd33339

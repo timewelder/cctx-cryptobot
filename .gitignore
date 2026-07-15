@@ -1,0 +1,6 @@
+*.db
+*.log
+__pycache__/
+.env
+fix.py
+cryptobot/
